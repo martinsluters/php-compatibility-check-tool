@@ -1,0 +1,22 @@
+{
+    "name": "mlwp/php-compatibilitity-check-tool",
+    "authors": [
+        {
+            "name": "Martins Luters",
+            "email": "luters.martins@gmail.com"
+        }
+    ],
+    "require": {
+        "phpcompatibility/php-compatibility": "^9.3",
+        "dealerdirect/phpcodesniffer-composer-installer": "^0.6.2"
+    },
+    "scripts": {
+        "test": [
+          "@composer install",
+          "sh test.sh < /dev/tty"
+        ]
+    },
+    "config": {
+      "process-timeout":0
+    }
+}
