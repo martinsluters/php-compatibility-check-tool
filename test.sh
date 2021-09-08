@@ -1,7 +1,7 @@
 GREEN='\033[0;32m';
 RED='\033[0;31m';
 NC='\033[0m'; # No Color
-phpversion="7.3";
+phpversion="7.4";
 userphpversion="";
 SRC_DIR="./src/";
 
@@ -10,7 +10,7 @@ if [ ! "$(ls $SRC_DIR)" ]; then
   exit;
 fi
 
-echo "${RED}Which version of PHP you would like to use? (press enter for 7.3): ${NC}"
+echo "${RED}Which version of PHP you would like to use? (press enter for 7.4): ${NC}"
 read userphpversion
 if [ ! -z "$userphpversion" ]
 then
