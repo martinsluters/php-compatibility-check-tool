@@ -31,7 +31,7 @@ if [ "$basesourcepath" = "$sourcepaths" ]; then
   fi
 fi
 
-echo "${GREEN}${$sourcepaths}${NC}"
+echo "${GREEN}${sourcepaths}${NC}"
 
 echo "${GREEN}Running PHP compatibility check for PHP $phpversion ${NC}";
 ./vendor/bin/phpcs -p $sourcepaths --standard=PHPCompatibility --report-full="$reportspath"compatibility-check-full-report-"$phpversion".txt --report-summary="$reportspath"compatibility-check-summary-report-"$phpversion".txt --runtime-set testVersion "$phpversion" --extensions=php -d memory_limit=512M
