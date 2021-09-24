@@ -24,20 +24,14 @@ then
   sourcepaths="$usersourcepaths";
 fi
 
-if [ "$basesourcepath" == "$sourcepaths" ]; then
+if [ "$basesourcepath" = "$sourcepaths" ]; then
   if [ ! "$(ls $sourcepaths)" ]; then
     echo "${RED}$sourcepaths directory is empty. Nothing to sniff. ${NC}"
     exit;
   fi
 fi
 
-
-for single_sourcepath in $sourcepaths
-do
-  phpcscmdsourcepaths+="${single_sourcepath} "
-done
-
-echo "${GREEN}${phpcscmdsourcepaths}${NC}"
+echo "${GREEN}${$sourcepaths}${NC}"
 
 echo "${GREEN}Running PHP compatibility check for PHP $phpversion ${NC}";
-./vendor/bin/phpcs -p $phpcscmdsourcepaths --standard=PHPCompatibility --report-full="$reportspath"compatibility-check-full-report-"$phpversion".txt --report-summary="$reportspath"compatibility-check-summary-report-"$phpversion".txt --runtime-set testVersion "$phpversion" --extensions=php -d memory_limit=512M
+./vendor/bin/phpcs -p $sourcepaths --standard=PHPCompatibility --report-full="$reportspath"compatibility-check-full-report-"$phpversion".txt --report-summary="$reportspath"compatibility-check-summary-report-"$phpversion".txt --runtime-set testVersion "$phpversion" --extensions=php -d memory_limit=512M
