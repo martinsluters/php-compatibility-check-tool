@@ -11,11 +11,15 @@ A simple interactive tool to check PHP compatibility of code. The tool allows to
 
 3. `composer install`
 
-4. Place your testable code in the `src` directory
+4a. Place testable code in the `src` directory
+
+4b. Specify paths of testable code interactively in the next step
 
 5. `sh test.sh` and follow the instructions
 
 6. Find reports in the `reports` directory
+
+7. Don't forget to delete the tool if set up on a production environment
 
 ## Requirements
 [Composer](https://getcomposer.org/) installed globally 
